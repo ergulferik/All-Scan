@@ -1,0 +1,28 @@
+{
+    "name": "AllScan",
+    "description": "It was developed by Ergül Ferik and Ceyhun Binal.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "16": "logo.png",
+        "32": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*",
+                "*://*/*"
+            ],
+            "js": [
+                "jquery-3.7.1.min.js",
+                "myscript.js"
+            ]
+        }
+    ]
+}

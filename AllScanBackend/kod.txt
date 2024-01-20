@@ -1,0 +1,32 @@
+# dosya_adi = 'database.xlsx'  # Dosya adýnýza uygun olarak deðiþtirin
+# try:
+#    df = pd.read_excel(dosya_adi, header=None)  # Sütun adlarýnýn olmadýðýný belirtir
+# except FileNotFoundError:
+#    # Eðer dosya bulunamazsa, boþ bir DataFrame oluþtur
+#    df = pd.DataFrame()
+#
+# aranan_url = 'www.example.com'  # Arama yapmak istediðiniz URL
+#
+## URL'nin var olup olmadýðýný kontrol etme
+# if aranan_url in df.values:
+#    index = df[df.eq(aranan_url).any(1)].index[0]  # URL'nin indeksini alýr
+#    zone = df.iloc[index, 1]  # Ýlgili indeksteki Zone deðerini alýr
+#    print(f"{aranan_url} verisi bulundu.")
+#    print(f"Zone: {zone}")
+# else:
+#    print(f"{aranan_url} verisi bulunamadý.")
+#    # URL dosyada bulunmuyorsa, yeni bir satýr olarak ekler
+#    yeni_veri = pd.DataFrame([[aranan_url, 'Red']], columns=[0, 1])  # Yeni veri oluþtur
+#    df = pd.concat([df, yeni_veri], ignore_index=True)  # Yeni veriyi mevcut DataFrame ile birleþtirir
+#
+#    # Veriyi Excel dosyasýna yazma
+#    df.to_excel(dosya_adi, index=False, header=False)  # Sütun adlarýný ve indeksi yazmaz
+#    print(f"{aranan_url} verisi eklendi.")
+
+
+#ASENKRON THREAD KODU 1
+
+# with concurrent.futures.ThreadPoolExecutor() as executor:
+#    futures = {executor.submit(scan_url, con): con for con in connections}
+#    for future in concurrent.futures.as_completed(futures):
+#        url = futures[future]

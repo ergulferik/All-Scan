@@ -84,7 +84,7 @@ class UrlScanner:
 
     def scanByKaspersky(self):
         headers = {
-            "x-api-key": "nz0VSqrfS6iv3wIBwEpeYg==",
+            "x-api-key": "", #TOKEN
         }
         res = requests.get(self._kasperskyUrl + self.url, headers=headers)
 
